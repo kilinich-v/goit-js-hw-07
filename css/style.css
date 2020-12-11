@@ -22,3 +22,8 @@
 #validation-input.valid {
 	border-color: #4caf50;
 }
+
+#boxes div {
+	width: 30px;
+	height: 30px;
+}
