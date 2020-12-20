@@ -4,12 +4,15 @@ const valueRef = document.querySelector('#value');
 
 let counterValue = 0;
 
-decrement.addEventListener('click', () => {
+decrement.addEventListener('click', decrementHandler);
+
+increment.addEventListener('click', incrementHandler);
+
+function incrementHandler() {
     counterValue -= 1;
     valueRef.textContent = counterValue;
-});
-
-increment.addEventListener('click', () => {
+}
+function decrementHandler() {
     counterValue += 1;
     valueRef.textContent = counterValue;
-});
+}

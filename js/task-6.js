@@ -1,6 +1,6 @@
 const validationInputRef = document.querySelector('#validation-input');
 
-validationInputRef.addEventListener('input', onToggleStyle);
+validationInputRef.addEventListener('blur', onToggleStyle);
 
 function onToggleStyle() {
     const inputLength = validationInputRef.value.length;

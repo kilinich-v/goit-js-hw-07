@@ -10,10 +10,11 @@ renderBtnRef.addEventListener('click', createBoxes);
 destroyBtnRef.addEventListener('click', destroyBoxes);
 
 function createBoxes(event) {
-    const boxes = document.querySelectorAll('#boxes div');
-    boxes.forEach(box => box.remove());
+    destroyBoxes(event);
 
-    let boxSize = 30;
+    let boxWidth = 30;
+    let boxHight = 30;
+    let boxes = [];
 
     for (let i = 0; i < count; i++) {
         const box = document.createElement('div');
@@ -23,13 +24,13 @@ function createBoxes(event) {
         const b = Math.floor(Math.random() * 256);
 
         box.style.backgroundColor = `rgb(${r} ${g} ${b})`;
-        box.style.width += `${boxSize += 10}px`;
-        box.style.height += `${boxSize += 10}px`;
+        box.style.width += `${boxWidth += 10}px`;
+        box.style.height += `${boxHight += 10}px`;
 
-        containerRef.append(box);
-
+        boxes.push(box);
     }
 
+    containerRef.append(...boxes);
     inputRef.value = null;
 };
 

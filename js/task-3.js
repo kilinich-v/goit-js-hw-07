@@ -20,11 +20,7 @@ const galleryRef = document.querySelector('#gallery');
 
 const addImgItem = imgArray => imgArray.map(item => {
     const listItem = document.createElement('li');
-    const img = document.createElement('img');
-    img.setAttribute('src', item.url);
-    img.setAttribute('alt', item.alt);
-
-    listItem.append(img);
+    listItem.insertAdjacentHTML('afterbegin', `<img src="${item.url}" alt="${item.alt}">`)
 
     return listItem;
 });
