@@ -12,8 +12,8 @@ destroyBtnRef.addEventListener('click', destroyBoxes);
 function createBoxes(event) {
     destroyBoxes(event);
 
-    let boxWidth = 30;
-    let boxHight = 30;
+    let boxWidth = 20;
+    let boxHight = 20;
     let boxes = [];
 
     for (let i = 0; i < count; i++) {
@@ -35,6 +35,5 @@ function createBoxes(event) {
 };
 
 function destroyBoxes(event) {
-    const boxes = document.querySelectorAll('#boxes div');
-    boxes.forEach(box => box.remove());
+    boxes.innerHTML = '';
 };

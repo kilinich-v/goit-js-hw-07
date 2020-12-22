@@ -19,12 +19,9 @@ const images = [
 const galleryRef = document.querySelector('#gallery');
 
 const addImgItem = imgArray => imgArray.map(item => {
-    const listItem = document.createElement('li');
-    listItem.insertAdjacentHTML('afterbegin', `<img src="${item.url}" alt="${item.alt}">`)
-
-    return listItem;
+    return `<li><img src="${item.url}" alt="${item.alt}"></li>`;
 });
 
-const newGalleryItems = addImgItem(images);
+const newGalleryItems = addImgItem(images).join();
 
-galleryRef.append(...newGalleryItems);
+galleryRef.insertAdjacentHTML('afterbegin', newGalleryItems);
